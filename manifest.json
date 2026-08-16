@@ -1,111 +1,113 @@
 {
   "name": "FarmAddress - سوق المزارع",
   "short_name": "FarmAddress",
-  "description": "اكتشف مزارعك المفضلة مباشرة - Discover your favorite farms directly",
-  "start_url": "/index.html",
+  "description": "تطبيق متجر إلكتروني لشراء المنتجات من المزارع المحلية مباشرة",
+  "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#ffffff",
+  "background_color": "#FFFFFF",
   "theme_color": "#2D5016",
   "categories": ["shopping", "business"],
+  "lang": "ar",
+  "dir": "rtl",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icon-192x192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "images/icon-512x512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
   "screenshots": [
     {
-      "src": "/images/screenshot-1.png",
+      "src": "images/screenshot-540x720.png",
       "sizes": "540x720",
       "type": "image/png",
       "form_factor": "narrow"
     },
     {
-      "src": "/images/screenshot-2.png",
+      "src": "images/screenshot-1280x720.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide"
     }
   ],
-  "icons": [
-    {
-      "src": "/images/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/images/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/images/icon-maskable-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "/images/icon-maskable-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
-  ],
-  "prefer_related_applications": false,
   "shortcuts": [
     {
-      "name": "Browse Farms",
-      "short_name": "Farms",
-      "description": "Browse all available farms",
-      "url": "/index.html#farms",
+      "name": "استكشف المزارع",
+      "short_name": "المزارع",
+      "description": "تصفح جميع المزارع المتاحة",
+      "url": "/index.html",
       "icons": [
         {
-          "src": "/images/icon-96x96.png",
-          "sizes": "96x96",
+          "src": "images/icon-192x192.png",
+          "sizes": "192x192",
           "type": "image/png"
         }
       ]
     },
     {
-      "name": "Your Cart",
-      "short_name": "Cart",
-      "description": "View your shopping cart",
+      "name": "سلة التسوق",
+      "short_name": "السلة",
+      "description": "عرض عناصر السلة",
       "url": "/cart.html",
       "icons": [
         {
-          "src": "/images/icon-96x96.png",
-          "sizes": "96x96",
+          "src": "images/icon-192x192.png",
+          "sizes": "192x192",
           "type": "image/png"
         }
       ]
     },
     {
-      "name": "Your Orders",
-      "short_name": "Orders",
-      "description": "View your order history",
+      "name": "طلباتي",
+      "short_name": "الطلبات",
+      "description": "عرض الطلبات السابقة",
       "url": "/orders.html",
       "icons": [
         {
-          "src": "/images/icon-96x96.png",
-          "sizes": "96x96",
+          "src": "images/icon-192x192.png",
+          "sizes": "192x192",
           "type": "image/png"
         }
       ]
     },
     {
-      "name": "Farmer Dashboard",
-      "short_name": "Dashboard",
-      "description": "Access the farmer panel",
+      "name": "لوحة المزارع",
+      "short_name": "لوحتي",
+      "description": "إدارة منتجاتي والطلبات",
       "url": "/farmer.html",
       "icons": [
         {
-          "src": "/images/icon-96x96.png",
-          "sizes": "96x96",
+          "src": "images/icon-192x192.png",
+          "sizes": "192x192",
           "type": "image/png"
         }
       ]
     }
   ],
   "share_target": {
-    "action": "/share-handler.html",
+    "action": "/share.html",
     "method": "POST",
     "enctype": "application/x-www-form-urlencoded",
     "params": {
