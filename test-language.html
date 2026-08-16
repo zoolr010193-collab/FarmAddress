@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Language System Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-header {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .test-group {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-left: 4px solid #2196F3;
+        }
+        .key {
+            font-weight: bold;
+            color: #2196F3;
+            margin-bottom: 5px;
+        }
+        .translation {
+            padding-left: 20px;
+            margin: 5px 0;
+        }
+        .ar { color: #4CAF50; }
+        .en { color: #FF9800; }
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .toggle-btn {
+            background: #2196F3;
+            color: white;
+        }
+        .toggle-btn:hover {
+            background: #1976D2;
+        }
+        .missing { color: red; font-weight: bold; }
+        .stats {
+            background: #FFF3E0;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-header">
+        <h1>🌐 FarmAddress Language System Test</h1>
+        <p>Verify all translations are working correctly</p>
+    </div>
+
+    <div class="test-container">
+        <h2>Language Toggle</h2>
+        <button class="toggle-btn" id="testToggle">Click to Toggle Language</button>
+        <p>Current Language: <strong id="currentLang">العربية (ar)</strong></p>
+    </div>
+
+    <div class="test-container">
+        <h2>Translation Status</h2>
+        <div class="stats">
+            <p>Total Keys in Arabic: <strong id="arCount">0</strong></p>
+            <p>Total Keys in English: <strong id="enCount">0</strong></p>
+            <p>Status: <strong id="status">Loading...</strong></p>
+        </div>
+    </div>
+
+    <div class="test-container">
+        <h2>Sample Translations</h2>
+        <div id="testResults"></div>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script>
+        // Test translations
+        function runTests() {
+            const testKeys = [
+                'nav.farms',
+                'nav.products',
+                'nav.cart',
+                'hero.title',
+                'checkout.place_order',
+                'farmer.welcome',
+                'login.username',
+                'cart.empty',
+                'common.search',
+            ];
+
+            let html = '';
+            let arMissing = 0;
+            let enMissing = 0;
+
+            testKeys.forEach(key => {
+                const ar = i18n.t(key);
+                const en = (window.translations?.en || {})[key] || 'MISSING';
+                
+                if (ar === key) arMissing++;
+                if (en === 'MISSING') enMissing++;
+
+                html += `
+                    <div class="test-group">
+                        <div class="key">Key: ${key}</div>
+                        <div class="translation ar">
+                            <strong>Arabic:</strong> ${ar}
+                        </div>
+                        <div class="translation en">
+                            <strong>English:</strong> ${en}
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('testResults').innerHTML = html;
+            
+            // Count total keys
+            const arKeys = Object.keys(window.translations?.ar || {}).length;
+            const enKeys = Object.keys(window.translations?.en || {}).length;
+            
+            document.getElementById('arCount').textContent = arKeys;
+            document.getElementById('enCount').textContent = enKeys;
+            
+            if (arMissing === 0 && enMissing === 0) {
+                document.getElementById('status').innerHTML = '✅ All translations working perfectly!';
+                document.getElementById('status').style.color = 'green';
+            } else {
+                document.getElementById('status').innerHTML = 
+                    `⚠️ Missing: ${arMissing} Arabic, ${enMissing} English`;
+                document.getElementById('status').style.color = 'orange';
+            }
+        }
+
+        // Language toggle test
+        document.getElementById('testToggle').addEventListener('click', function() {
+            const newLang = i18n.toggleLanguage();
+            const langName = newLang === 'ar' ? 'العربية (ar)' : 'English (en)';
+            document.getElementById('currentLang').textContent = langName;
+            console.log('Language switched to:', newLang);
+        });
+
+        // Run tests on load
+        window.addEventListener('DOMContentLoaded', runTests);
+        setTimeout(runTests, 500);
+    </script>
+</body>
+</html>
