@@ -2,7 +2,7 @@
   "name": "FarmAddress - سوق المزارع",
   "short_name": "FarmAddress",
   "description": "تطبيق متجر إلكتروني لشراء المنتجات من المزارع المحلية مباشرة",
-  "start_url": "/",
+  "start_url": "/index.html",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
@@ -40,13 +40,13 @@
   ],
   "screenshots": [
     {
-      "src": "images/screenshot-540x720.png",
+      "src": "images/screenshot-narrow.png",
       "sizes": "540x720",
       "type": "image/png",
       "form_factor": "narrow"
     },
     {
-      "src": "images/screenshot-1280x720.png",
+      "src": "images/screenshot-wide.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide"
@@ -107,7 +107,7 @@
     }
   ],
   "share_target": {
-    "action": "/share.html",
+    "action": "/",
     "method": "POST",
     "enctype": "application/x-www-form-urlencoded",
     "params": {
