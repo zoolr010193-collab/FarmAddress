@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FarmAddress | تسجيل دخول المزارع</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">F</div>
+          <span>FarmAddress</span>
+        </div>
+
+        <nav class="main-nav" aria-label="التنقل الرئيسي">
+          <a href="index.html">الرئيسية</a>
+          <a href="farmer.html">لوحة المزارع</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="index.html" class="button secondary">عودة</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container auth-page">
+      <div class="auth-card">
+        <div class="auth-header">
+          <span class="eyebrow">تسجيل الدخول</span>
+          <h1>لوحة المزارع</h1>
+        </div>
+
+        <form id="loginForm" class="auth-form">
+          <label>
+            اسم المستخدم
+            <input type="text" id="username" placeholder="admin" required />
+          </label>
+
+          <label>
+            كلمة المرور
+            <input type="password" id="password" placeholder="••••••••" required />
+          </label>
+
+          <button type="submit" class="button primary w-full">تسجيل الدخول</button>
+        </form>
+
+        <div id="loginMessage" class="login-message hidden"></div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 FarmAddress. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <script src="firebase-config.js"></script>
+    <script src="db.js"></script>
+    <script src="login.js"></script>
+  </body>
+</html>

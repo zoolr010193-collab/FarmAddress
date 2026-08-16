@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FarmAddress | تفاصيل المزرعة</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="detail.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">F</div>
+          <span>FarmAddress</span>
+        </div>
+
+        <nav class="main-nav" aria-label="التنقل الرئيسي">
+          <a href="index.html">الرئيسية</a>
+          <a href="index.html#farms">المزارع</a>
+          <a href="index.html#products">المنتجات</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="index.html" class="button secondary">العودة</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container detail-page">
+      <section class="detail-hero">
+        <div class="farm-preview" id="farmPreview">🌾</div>
+        <div class="farm-overview">
+          <span class="eyebrow" id="farmBadge">مزرعة</span>
+          <h1 id="farmName">اسم المزرعة</h1>
+          <p id="farmSummary">
+            وصف مختصر للمزرعة والمنطقة التي تقدم فيها المنتجات الزراعية.
+          </p>
+
+          <div class="farm-meta-row">
+            <span id="farmCity">المدينة</span>
+            <span id="farmDistance">المسافة</span>
+            <span id="farmRating">★ 4.9</span>
+          </div>
+
+          <div class="tags" id="farmTags"></div>
+        </div>
+      </section>
+
+      <section class="farm-profile-box">
+        <div class="profile-header">
+          <h2>معلومات المزرعة</h2>
+        </div>
+        <div class="profile-grid">
+          <div class="profile-item">
+            <span class="label">الشعار</span>
+            <strong id="profileLogo">🌿</strong>
+          </div>
+          <div class="profile-item">
+            <span class="label">المدينة</span>
+            <strong id="profileCity">الخرطوم</strong>
+          </div>
+          <div class="profile-item">
+            <span class="label">الهاتف</span>
+            <strong id="profilePhone">0500000000</strong>
+          </div>
+          <div class="profile-item full-span">
+            <span class="label">الوصف</span>
+            <p id="profileDescription">مزرعة تنتج منتجات طازجة مباشرة من الحقل.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="detail-columns">
+        <div class="detail-panel">
+          <div class="panel-header">
+            <h2>منتجات المزرعة</h2>
+          </div>
+          <div id="farmProducts" class="farm-product-list"></div>
+        </div>
+
+        <aside class="detail-panel order-panel">
+          <div class="panel-header">
+            <h2>تسجيل الطلب</h2>
+          </div>
+
+          <form id="orderForm" class="order-form">
+            <label>
+              الاسم الكامل
+              <input type="text" name="fullName" placeholder="أدخل اسمك" required />
+            </label>
+
+            <label>
+              رقم الهاتف
+              <input type="tel" name="phone" placeholder="05xxxxxxxx" required />
+            </label>
+
+            <label>
+              المنتج المطلوب
+              <select name="product" id="productSelect" required>
+                <option value="">اختر منتجاً</option>
+              </select>
+            </label>
+
+            <label>
+              الكمية
+              <input type="number" name="quantity" min="1" value="1" required />
+            </label>
+
+            <label>
+              ملاحظات إضافية
+              <textarea name="notes" rows="4" placeholder="مثال: أريد توصيل الطلب في وقت محدد..."></textarea>
+            </label>
+
+            <button type="submit" class="button primary w-full">إرسال الطلب</button>
+          </form>
+
+          <div id="orderSuccess" class="success-box hidden">
+            تم تسجيل طلبك بنجاح، وسيقوم فريق المزرعة بالتواصل معك قريباً.
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 FarmAddress. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <script src="firebase-config.js"></script>
+    <script src="db.js"></script>
+    <script src="detail.js"></script>
+  </body>
+</html>

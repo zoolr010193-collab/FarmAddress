@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FarmAddress | تفاصيل المنتج</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="product.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">F</div>
+          <span>FarmAddress</span>
+        </div>
+
+        <nav class="main-nav" aria-label="التنقل الرئيسي">
+          <a href="index.html">الرئيسية</a>
+          <a href="index.html#farms">المزارع</a>
+          <a href="index.html#products">المنتجات</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="cart.html" class="button secondary cart-button">
+            <span>السلة</span>
+            <span id="cartCount" class="cart-badge">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container product-page">
+      <section class="product-detail-card">
+        <div class="product-visual" id="productVisual">🍓</div>
+        <div class="product-detail-copy">
+          <span class="eyebrow" id="productCategory">فواكه</span>
+          <h1 id="productName">اسم المنتج</h1>
+          <p id="productDescription">
+            وصف المنتج وخصائصه الغذائية وكيفية تميزه عن المنتجات الأخرى.
+          </p>
+
+          <div class="detail-price-row">
+            <div>
+              <span class="price-label">السعر</span>
+              <strong id="productPrice">0 جنيه</strong>
+            </div>
+            <div>
+              <span class="price-label">المزرعة</span>
+              <strong id="productFarm">اسم المزرعة</strong>
+            </div>
+          </div>
+
+          <div class="product-actions">
+            <label class="qty-box">
+              الكمية
+              <input type="number" id="qtyInput" min="1" value="1" />
+            </label>
+            <button id="addToCartBtn" class="button primary">أضف إلى السلة</button>
+          </div>
+
+          <div id="cartMessage" class="cart-message hidden">تمت إضافة المنتج إلى السلة.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 FarmAddress. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <script src="firebase-config.js"></script>
+    <script src="db.js"></script>
+    <script src="product.js"></script>
+  </body>
+</html>

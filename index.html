@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FarmAddress | سوق المزارع</title>
+    <meta
+      name="description"
+      content="FarmAddress يساعدك في اكتشاف المزارع والمنتجات المحلية مباشرة من المزارعين."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">F</div>
+          <span>FarmAddress</span>
+        </div>
+
+        <nav class="main-nav" aria-label="التنقل الرئيسي">
+          <a href="#farms">المزارع</a>
+          <a href="#products">المنتجات</a>
+          <a href="#about">من نحن</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="cart.html" class="button secondary cart-button">
+            <span>السلة</span>
+            <span id="cartCount" class="cart-badge">0</span>
+          </a>
+          <a href="login.html" class="button primary">لوحة المزارع</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container">
+        <div class="hero-copy">
+          <span class="eyebrow">من المزرعة إلى بابك</span>
+          <h1>اكتشف مزارعك المفضلة مباشرةً</h1>
+          <p>
+            ابحث عن منتجك المفضل من المزارعين المحليين، استعرض الأسعار، واحجز
+            الطلب بسهولة من خلال منصة موثوقة ومباشرة.
+          </p>
+
+          <div class="hero-actions">
+            <button class="button primary">تصفح المزارع</button>
+            <button class="button ghost">شاهد المنتجات</button>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <strong>2.4K+</strong>
+              <span>مزارع مسجل</span>
+            </div>
+            <div>
+              <strong>18K+</strong>
+              <span>طلب تم توصيله</span>
+            </div>
+            <div>
+              <strong>4.9/5</strong>
+              <span>تقييم العملاء</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="خريطة المزارع">
+          <div class="map-card">
+            <div class="map-header">
+              <span>مناطق شائعة</span>
+              <span class="badge">مباشر</span>
+            </div>
+            <div class="map-pins">
+              <span class="pin pin-1">1</span>
+              <span class="pin pin-2">2</span>
+              <span class="pin pin-3">3</span>
+              <span class="pin pin-4">4</span>
+            </div>
+            <div class="mini-cards">
+              <div>
+                <strong>Al Jazira</strong>
+                <small>18 مزرعة</small>
+              </div>
+              <div>
+                <strong>Khartoum</strong>
+                <small>12 مزرعة</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="search-section container">
+        <div class="search-box">
+          <div class="search-field">
+            <label for="searchInput">ابحث عن مزرعة أو منتج</label>
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="مثل: خضار، تمور، مزارع الخرطوم..."
+            />
+          </div>
+          <button class="button primary search-button">بحث</button>
+        </div>
+
+        <div class="filter-bar" aria-label="فلاتر الفئات">
+          <button class="filter-chip active" data-filter="all">الكل</button>
+          <button class="filter-chip" data-filter="fruit">فواكه</button>
+          <button class="filter-chip" data-filter="vegetable">خضار</button>
+          <button class="filter-chip" data-filter="grain">حبوب</button>
+          <button class="filter-chip" data-filter="dairy">ألبان</button>
+        </div>
+      </section>
+
+      <section id="farms" class="container section-block">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">المزارع</span>
+            <h2>اكتشف أفضل المزارع القريبة منك</h2>
+          </div>
+          <a href="#" class="link-btn">عرض الكل</a>
+        </div>
+
+        <div id="farmsContainer" class="farms-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="products" class="container section-block products-section">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">منتجات شائعة</span>
+            <h2>توصيات من المزارعين اليوم</h2>
+          </div>
+          <a href="#" class="link-btn">تصفح المزيد</a>
+        </div>
+
+        <div id="productsContainer" class="product-grid" aria-live="polite"></div>
+      </section>
+
+      <section id="about" class="container about-box">
+        <div class="about-text">
+          <span class="eyebrow">لماذا FarmAddress؟</span>
+          <h2>منصة تربط الزرّاع والعملاء بطريقة مباشرة وفعّالة</h2>
+          <p>
+            نوفر لعملائنا تجربة شراء موثوقة، مع إمكانية معاينة المنتجات، معرفة
+            مصدرها، والطلب مباشرة من صاحب المزرعة عبر واجهة سهلة الاستخدام.
+          </p>
+        </div>
+
+        <div class="about-features">
+          <div class="feature-item">
+            <span class="feature-icon">📍</span>
+            <div>
+              <h3>عنوان رقمي لكل مزرعة</h3>
+              <p>كل مزرعة تحصل على عنوان فريد وقابل للبحث.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📦</span>
+            <div>
+              <h3>طلب سريع</h3>
+              <p>اختر المنتجات، احجزها، واتبع حالة الطلب بسهولة.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🤝</span>
+            <div>
+              <h3>دعم مباشر</h3>
+              <p>تواصل مع المزارعين مباشرة واطلب المنتجات حسب احتياجك.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 FarmAddress. جميع الحقوق محفوظة.</p>
+        <div class="footer-links">
+          <a href="#">سياسة الخصوصية</a>
+          <a href="#">اتصل بنا</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="firebase-config.js"></script>
+    <script src="db.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

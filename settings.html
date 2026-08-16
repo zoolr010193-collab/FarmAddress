@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FarmAddress | إعدادات المزرعة</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="settings.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">F</div>
+          <span>FarmAddress</span>
+        </div>
+
+        <nav class="main-nav" aria-label="التنقل الرئيسي">
+          <a href="index.html">الرئيسية</a>
+          <a href="farmer.html">لوحة المزارع</a>
+          <a href="orders.html">الطلبات</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button type="button" id="logoutBtn" class="button secondary">الخروج</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container settings-page">
+      <section class="settings-header">
+        <span class="eyebrow">إعدادات المزرعة</span>
+        <h1>تحديث بيانات المزرعة</h1>
+      </section>
+
+      <section class="settings-card">
+        <form id="settingsForm" class="settings-form">
+          <label>
+            اسم المزرعة
+            <input type="text" name="farmName" required placeholder="اسم مزرعتك" />
+          </label>
+
+          <label>
+            المدينة
+            <input type="text" name="city" required placeholder="مثل: الخرطوم" />
+          </label>
+
+          <label>
+            رقم الهاتف
+            <input type="tel" name="phone" required placeholder="05xxxxxxxx" />
+          </label>
+
+          <label>
+            شعار المزرعة
+            <input type="text" name="logo" maxlength="2" value="🌿" required />
+          </label>
+
+          <label class="full-width">
+            وصف المزرعة
+            <textarea name="description" rows="5" required placeholder="اكتب وصفًا مختصرًا عن مزرعتك"></textarea>
+          </label>
+
+          <button type="submit" class="button primary w-full">حفظ الإعدادات</button>
+        </form>
+
+        <div id="settingsMessage" class="settings-message hidden"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 FarmAddress. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <script src="firebase-config.js"></script>
+    <script src="db.js"></script>
+    <script src="settings.js"></script>
+  </body>
+</html>

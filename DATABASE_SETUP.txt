@@ -1,0 +1,118 @@
+====================================
+FARMADDRESS DATABASE SETUP GUIDE
+====================================
+
+📱 CURRENT STATE: Using localStorage (Offline Mode)
+The app is fully functional with localStorage. All data is stored locally in your browser.
+
+🔄 SWITCHING TO FIREBASE (When Ready):
+===========================================
+
+STEP 1: Create a Firebase Project
+- Go to https://console.firebase.google.com
+- Click "Create Project" or "Add Project"
+- Enter project name: "FarmAddress"
+- Follow the setup wizard
+
+STEP 2: Get Your Firebase Config
+- In Firebase Console → Project Settings (gear icon)
+- Copy the firebaseConfig object
+- It looks like:
+  {
+    apiKey: "YOUR_KEY",
+    authDomain: "yourproject.firebaseapp.com",
+    projectId: "yourproject",
+    storageBucket: "yourproject.appspot.com",
+    messagingSenderId: "123456789",
+    appId: "1:123456789:web:abc123"
+  }
+
+STEP 3: Enable Firestore Database
+- In Firebase Console → Build → Firestore Database
+- Click "Create Database"
+- Start in test mode (for development)
+- Choose region closest to you
+- Create collections as needed
+
+STEP 4: Update firebase-config.js
+- Open /firebase-config.js
+- Replace the mock config with your real config
+- Change DB_MODE from 'local' to 'firebase'
+- Save the file
+
+STEP 5: Update db.js (Add Firebase Implementation)
+- The db.js file has placeholder methods for Firebase
+- You'll need to add the Firebase SDK: <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+- Then implement Firebase methods in db.js
+
+====================================
+DATABASE API METHODS
+====================================
+
+Using the database abstraction layer (all methods return Promises):
+
+// Get all documents
+await db.getAll('farms');
+
+// Get single document
+await db.getDocument('farms', 'farmId');
+
+// Add new document
+await db.addDocument('farms', { name: 'Farm Name', ...data });
+
+// Update document
+await db.updateDocument('farms', 'farmId', { name: 'New Name' });
+
+// Delete document
+await db.deleteDocument('farms', 'farmId');
+
+// Query by field
+await db.queryByField('orders', 'farmerId', 'farm123');
+
+// Get entire collection
+await db.getCollection('products');
+
+// Clear entire collection
+await db.clearCollection('carts');
+
+====================================
+CURRENT COLLECTION STRUCTURE
+====================================
+
+1. farms (farmAddressFarms)
+   - name, city, logo, description, phone, etc.
+
+2. products (farmAddressProducts)
+   - name, price, description, farmId, etc.
+
+3. orders (farmAddressOrders)
+   - customerName, items, total, status, etc.
+
+4. farmerOrders (farmAddressFarmerOrders)
+   - farmerName, items, customer, status, etc.
+
+5. farmerProfile (farmAddressFarmProfile)
+   - farmName, city, phone, logo, description
+
+6. farmerSession (farmAddressfarmerSession)
+   - farmerName, loggedIn status
+
+7. cart (farmAddressCart)
+   - items array for shopping cart
+
+====================================
+NEXT STEPS
+====================================
+
+1. Run the app: python3 -m http.server 8000
+2. Test all features with localStorage (current state)
+3. When ready, get Firebase credentials
+4. Update firebase-config.js with real config
+5. Implement Firebase methods in db.js
+6. Change DB_MODE to 'firebase'
+7. Test thoroughly with real Firestore
+
+The abstraction layer means you won't need to change script.js, detail.js, 
+etc. - they already use db.* methods!
+
+====================================

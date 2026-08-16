@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FarmAddress | لوحة المزارع</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="farmer.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">F</div>
+          <span>FarmAddress</span>
+        </div>
+
+        <nav class="main-nav" aria-label="التنقل الرئيسي">
+          <a href="index.html">الرئيسية</a>
+          <a href="orders.html">طلباتي</a>
+          <a href="cart.html">السلة</a>
+          <a href="settings.html">إعدادات المزرعة</a>
+        </nav>
+
+        <div class="nav-actions">
+          <span class="farmer-greeting" id="farmerGreeting">المزارع</span>
+          <button type="button" id="logoutBtn" class="button secondary">الخروج</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container farmer-page">
+      <section class="dashboard-header">
+        <div>
+          <span class="eyebrow">لوحة تحكم المزارع</span>
+          <h1>إدارة المنتجات والطلبات</h1>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <div class="panel add-product-panel">
+          <h2>إضافة منتج</h2>
+          <form id="productForm" class="product-form">
+            <label>
+              اسم المنتج
+              <input type="text" name="name" required placeholder="مثال: رمان طازج" />
+            </label>
+
+            <label>
+              الفئة
+              <select name="category" required>
+                <option value="">اختر الفئة</option>
+                <option value="فواكه">فواكه</option>
+                <option value="خضار">خضار</option>
+                <option value="حبوب">حبوب</option>
+                <option value="ألبان">ألبان</option>
+              </select>
+            </label>
+
+            <label>
+              السعر (جنيه)
+              <input type="number" name="price" min="1" required placeholder="120" />
+            </label>
+
+            <label>
+              الرمز التعبيري
+              <input type="text" name="emoji" value="🌿" maxlength="2" required />
+            </label>
+
+            <label class="full-width">
+              وصف المنتج
+              <textarea name="description" rows="3" placeholder="وصف مختصر للمنتج"></textarea>
+            </label>
+
+            <button type="submit" class="button primary w-full">إضافة المنتج</button>
+          </form>
+        </div>
+
+        <div class="panel stats-panel">
+          <h2>إحصائيات سريعة</h2>
+          <div class="stats-grid">
+            <div class="stat-box">
+              <span>إجمالي المنتجات</span>
+              <strong id="productsCount">0</strong>
+            </div>
+            <div class="stat-box">
+              <span>الطلبات الحالية</span>
+              <strong id="ordersCount">0</strong>
+            </div>
+            <div class="stat-box">
+              <span>إيراد اليوم</span>
+              <strong id="todayRevenue">0</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel table-panel">
+        <div class="panel-header">
+          <h2>المنتجات الحالية</h2>
+        </div>
+        <div id="farmerProducts" class="table-wrap"></div>
+      </section>
+
+      <section class="panel table-panel">
+        <div class="panel-header">
+          <h2>الطلبات الواردة</h2>
+        </div>
+        <div id="farmerOrders" class="table-wrap"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 FarmAddress. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <script src="firebase-config.js"></script>
+    <script src="db.js"></script>
+    <script src="farmer.js"></script>
+  </body>
+</html>

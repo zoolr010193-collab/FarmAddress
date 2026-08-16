@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FarmAddress | طلباتي</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="orders.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">F</div>
+          <span>FarmAddress</span>
+        </div>
+
+        <nav class="main-nav" aria-label="التنقل الرئيسي">
+          <a href="index.html">الرئيسية</a>
+          <a href="index.html#farms">المزارع</a>
+          <a href="cart.html">السلة</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="checkout.html" class="button primary">إتمام الطلب</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container orders-page">
+      <section class="orders-header">
+        <span class="eyebrow">الطلبات</span>
+        <h1>سجل طلباتي</h1>
+      </section>
+
+      <section id="ordersList" class="orders-list"></section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© 2026 FarmAddress. جميع الحقوق محفوظة.</p>
+      </div>
+    </footer>
+
+    <script src="firebase-config.js"></script>
+    <script src="db.js"></script>
+    <script src="orders.js"></script>
+  </body>
+</html>
