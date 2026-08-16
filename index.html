@@ -9,6 +9,7 @@
       content="FarmAddress يساعدك في اكتشاف المزارع والمنتجات المحلية مباشرة من المزارعين."
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="i18n.css" />
   </head>
   <body>
     <header class="topbar">
@@ -19,17 +20,21 @@
         </div>
 
         <nav class="main-nav" aria-label="التنقل الرئيسي">
-          <a href="#farms">المزارع</a>
-          <a href="#products">المنتجات</a>
-          <a href="#about">من نحن</a>
+          <a href="#farms" data-i18n="nav.farms">المزارع</a>
+          <a href="#products" data-i18n="nav.products">المنتجات</a>
+          <a href="#about" data-i18n="nav.about">من نحن</a>
         </nav>
 
         <div class="nav-actions">
+          <button id="languageToggle" class="language-toggle" title="Toggle Language">
+            <span class="language-toggle-icon">🌐</span>
+            <span id="langText" data-i18n="common.language">اللغة</span>
+          </button>
           <a href="cart.html" class="button secondary cart-button">
-            <span>السلة</span>
+            <span data-i18n="nav.cart">السلة</span>
             <span id="cartCount" class="cart-badge">0</span>
           </a>
-          <a href="login.html" class="button primary">لوحة المزارع</a>
+          <a href="login.html" class="button primary" data-i18n="nav.farmer_panel">لوحة المزارع</a>
         </div>
       </div>
     </header>
@@ -37,16 +42,16 @@
     <main>
       <section class="hero container">
         <div class="hero-copy">
-          <span class="eyebrow">من المزرعة إلى بابك</span>
-          <h1>اكتشف مزارعك المفضلة مباشرةً</h1>
-          <p>
+          <span class="eyebrow" data-i18n="hero.eyebrow">من المزرعة إلى بابك</span>
+          <h1 data-i18n="hero.title">اكتشف مزارعك المفضلة مباشرةً</h1>
+          <p data-i18n="hero.description">
             ابحث عن منتجك المفضل من المزارعين المحليين، استعرض الأسعار، واحجز
             الطلب بسهولة من خلال منصة موثوقة ومباشرة.
           </p>
 
           <div class="hero-actions">
-            <button class="button primary">تصفح المزارع</button>
-            <button class="button ghost">شاهد المنتجات</button>
+            <button class="button primary" data-i18n="hero.browse">تصفح المزارع</button>
+            <button class="button ghost" data-i18n="hero.products">شاهد المنتجات</button>
           </div>
 
           <div class="hero-stats">
@@ -94,10 +99,11 @@
       <section class="search-section container">
         <div class="search-box">
           <div class="search-field">
-            <label for="searchInput">ابحث عن مزرعة أو منتج</label>
+            <label for="searchInput" data-i18n="common.search">ابحث عن مزرعة أو منتج</label>
             <input
               id="searchInput"
               type="text"
+              data-i18n-placeholder="common.search"
               placeholder="مثل: خضار، تمور، مزارع الخرطوم..."
             />
           </div>
@@ -185,6 +191,14 @@
 
     <script src="firebase-config.js"></script>
     <script src="db.js"></script>
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
+    <script>
+      // Initialize language toggle
+      document.getElementById('languageToggle')?.addEventListener('click', function() {
+        const newLang = i18n.toggleLanguage();
+        console.log('Language changed to:', newLang);
+      });
+    </script>
   </body>
 </html>

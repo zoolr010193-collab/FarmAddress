@@ -1,0 +1,148 @@
+/* Language & Direction Specific Styles */
+
+/* RTL (Arabic) Adjustments */
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] .brand {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .main-nav {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+[dir="rtl"] .nav-actions {
+    margin-left: 0;
+    margin-right: auto;
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .hero-copy {
+    text-align: center;
+}
+
+[dir="rtl"] .container {
+    text-align: right;
+}
+
+[dir="rtl"] .grid {
+    text-align: right;
+}
+
+[dir="rtl"] input[type="text"],
+[dir="rtl"] input[type="email"],
+[dir="rtl"] input[type="tel"],
+[dir="rtl"] input[type="password"],
+[dir="rtl"] textarea,
+[dir="rtl"] select {
+    text-align: right;
+}
+
+/* LTR (English) Adjustments */
+[dir="ltr"] {
+    text-align: left;
+}
+
+[dir="ltr"] .main-nav {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+[dir="ltr"] .nav-actions {
+    margin-right: 0;
+    margin-left: auto;
+    flex-direction: row;
+}
+
+[dir="ltr"] .hero-copy {
+    text-align: center;
+}
+
+[dir="ltr"] input[type="text"],
+[dir="ltr"] input[type="email"],
+[dir="ltr"] input[type="tel"],
+[dir="ltr"] input[type="password"],
+[dir="ltr"] textarea,
+[dir="ltr"] select {
+    text-align: left;
+}
+
+/* Language Toggle Button */
+.language-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    color: inherit;
+}
+
+.language-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.language-toggle-icon {
+    font-size: 1.2rem;
+}
+
+/* Adjust for navbar */
+[dir="rtl"] .language-toggle {
+    margin-left: 1rem;
+}
+
+[dir="ltr"] .language-toggle {
+    margin-right: 1rem;
+}
+
+/* Form alignment fixes */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+}
+
+[dir="rtl"] .form-group label {
+    text-align: right;
+}
+
+[dir="ltr"] .form-group label {
+    text-align: left;
+}
+
+/* List alignments */
+.nav-list {
+    list-style-position: inside;
+}
+
+[dir="rtl"] .nav-list {
+    text-align: right;
+}
+
+[dir="ltr"] .nav-list {
+    text-align: left;
+}
+
+/* Ensure proper spacing for elements on both sides */
+@media (max-width: 768px) {
+    [dir="rtl"] .main-nav,
+    [dir="ltr"] .main-nav {
+        display: none;
+    }
+    
+    [dir="rtl"] .nav-actions,
+    [dir="ltr"] .nav-actions {
+        width: 100%;
+    }
+}
