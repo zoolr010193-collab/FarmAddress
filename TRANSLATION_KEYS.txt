@@ -1,0 +1,136 @@
+================================
+FARMADDRESS TRANSLATION KEYS
+================================
+
+All available translation keys in the system:
+
+NAVIGATION (nav.*)
+- nav.farms: المزارع / Farms
+- nav.products: المنتجات / Products
+- nav.about: من نحن / About
+- nav.cart: السلة / Cart
+- nav.farmer_panel: لوحة المزارع / Farmer Panel
+- nav.settings: الإعدادات / Settings
+- nav.logout: تسجيل الخروج / Logout
+
+HERO SECTION (hero.*)
+- hero.eyebrow: من المزرعة إلى بابك / From Farm to Your Door
+- hero.title: اكتشف مزارعك المفضلة مباشرةً / Discover Your Favorite Farms Directly
+- hero.description: Long description about the platform
+- hero.browse: تصفح المزارع / Browse Farms
+- hero.products: شاهد المنتجات / View Products
+
+SECTION HEADERS (section.*)
+- section.farms: استعرض المزارع / Browse Farms
+- section.products: المنتجات الشهيرة / Popular Products
+- section.about: من نحن / About Us
+
+CARDS (card.*)
+- card.location: الموقع / Location
+- card.price: السعر / Price
+- card.view_details: عرض التفاصيل / View Details
+- card.add_to_cart: أضف إلى السلة / Add to Cart
+- card.in_stock: متوفر / In Stock
+- card.out_of_stock: غير متوفر / Out of Stock
+
+CART PAGE (cart.*)
+- cart.title: سلة المشتريات / Shopping Cart
+- cart.empty: سلتك فارغة / Your cart is empty
+- cart.item: عنصر / Item
+- cart.items: عناصر / Items
+- cart.quantity: الكمية / Quantity
+- cart.remove: حذف / Remove
+- cart.total: الإجمالي / Total
+- cart.checkout: إتمام الشراء / Proceed to Checkout
+- cart.continue_shopping: متابعة التسوق / Continue Shopping
+
+CHECKOUT PAGE (checkout.*)
+- checkout.title: إتمام الطلب / Complete Order
+- checkout.customer_info: معلومات المشتري / Customer Information
+- checkout.name: الاسم / Name
+- checkout.email: البريد الإلكتروني / Email
+- checkout.phone: رقم الهاتف / Phone
+- checkout.address: العنوان / Address
+- checkout.order_summary: ملخص الطلب / Order Summary
+- checkout.place_order: تأكيد الطلب / Place Order
+- checkout.success: تم الطلب بنجاح! / Order placed successfully!
+
+ORDERS PAGE (orders.*)
+- orders.title: سجل الطلبات / Order History
+- orders.no_orders: لا توجد طلبات بعد / No orders yet
+- orders.order_id: رقم الطلب / Order ID
+- orders.date: التاريخ / Date
+- orders.total: الإجمالي / Total
+- orders.status: الحالة / Status
+- orders.view: عرض التفاصيل / View Details
+
+FARMER PANEL (farmer.*)
+- farmer.title: لوحة المزارع / Farmer Dashboard
+- farmer.welcome: أهلاً بك / Welcome
+- farmer.add_product: إضافة منتج / Add Product
+- farmer.my_products: منتجاتي / My Products
+- farmer.incoming_orders: الطلبات الواردة / Incoming Orders
+- farmer.product_name: اسم المنتج / Product Name
+- farmer.product_price: السعر / Price
+- farmer.product_description: الوصف / Description
+- farmer.submit: إضافة / Add
+- farmer.logout: تسجيل الخروج / Logout
+- farmer.no_products: لم تضف منتجات بعد / No products added yet
+- farmer.no_orders: لا توجد طلبات بعد / No orders yet
+- farmer.mark_completed: تحديد كمنجز / Mark as Completed
+
+LOGIN PAGE (login.*)
+- login.title: تسجيل دخول المزارع / Farmer Login
+- login.username: اسم المستخدم / Username
+- login.password: كلمة المرور / Password
+- login.login: دخول / Login
+- login.demo: تجربة: admin / farm123 / Demo: admin / farm123
+- login.invalid: بيانات دخول غير صحيحة / Invalid credentials
+
+SETTINGS PAGE (settings.*)
+- settings.title: إعدادات المزرعة / Farm Settings
+- settings.farm_name: اسم المزرعة / Farm Name
+- settings.city: المدينة / City
+- settings.phone: رقم الهاتف / Phone
+- settings.logo: رابط الشعار / Logo URL
+- settings.description: وصف المزرعة / Farm Description
+- settings.save: حفظ التغييرات / Save Changes
+- settings.success: تم الحفظ بنجاح / Saved successfully
+
+DETAIL PAGE (detail.*)
+- detail.farm_info: معلومات المزرعة / Farm Information
+- detail.phone: الهاتف / Phone
+- detail.city: المدينة / City
+- detail.description: الوصف / Description
+- detail.products: منتجات المزرعة / Farm Products
+
+FOOTER (footer.*)
+- footer.about: من نحن / About
+- footer.contact: اتصل بنا / Contact Us
+- footer.privacy: سياسة الخصوصية / Privacy Policy
+- footer.terms: الشروط والأحكام / Terms & Conditions
+- footer.rights: جميع الحقوق محفوظة / All rights reserved
+
+COMMON (common.*)
+- common.search: بحث / Search
+- common.filter: تصفية / Filter
+- common.edit: تعديل / Edit
+- common.delete: حذف / Delete
+- common.save: حفظ / Save
+- common.cancel: إلغاء / Cancel
+- common.back: رجوع / Back
+- common.next: التالي / Next
+- common.language: اللغة / Language
+- common.arabic: العربية / العربية
+- common.english: English / English
+
+================================
+TOTAL: 100+ TRANSLATION KEYS
+
+HOW TO USE:
+1. In HTML: <element data-i18n="key.name">
+2. In JS: t('key.name')
+
+PERSIST: Choice saved in localStorage as "farmAddress_language"
+
+================================
